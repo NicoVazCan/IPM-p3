@@ -6,7 +6,7 @@
 </head>
 <body>
     <main>
-        <form id="register">
+        <form id="register" >
             <ul>
                 <li>
                     <label for="name">Nombre:</label>
@@ -34,20 +34,22 @@
                 </li>
                 <li>
                     <label for="phone">Teléfono:</label>
-                    <input type="phone" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
                 </li>
                 <li>
-                    <label for="email">Vacunado:</label>
+                    <label>Vacunado:</label>
+                    <label for="sivacun">Sí</label>
                     <input type="radio" id="sivacun" name="si_vacun">
+                    <label for="novacun">No</label>
                     <input type="radio" id="novacun" name="no_vacun">
                 </li>
-                <li class="button">
+                <li>
                     <button>Registrar</button>
                 </li>
             </ul>
         </form>
     </main>
 
-    <script src="index.js"> </script>
+    <script src="registrar.js"> </script>
 </body>
 </html>
