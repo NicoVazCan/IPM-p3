@@ -1,6 +1,6 @@
-li{
+li {
     color: blue;
-    font-size: 4vw;
+    font-size: calc(1em + 1vw);
 }
 button{
     alignment: center;
