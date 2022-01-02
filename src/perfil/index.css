@@ -1,0 +1,8 @@
+li {
+    color: blue;
+    font-size: calc(1em + 1vw);
+}
+button{
+    alignment: center;
+    font-size: 5vw;
+}
