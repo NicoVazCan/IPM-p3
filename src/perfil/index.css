@@ -1,9 +1,19 @@
+body{
+    margin: 50px;
+    font-family: "Muli", sans-serif;
+    background-image: linear-gradient(-225deg, #387bf6 0%, #1aa4ce 51%, #07f8f8 100%);
+    height: calc(100vh - 100px);
+}
 h1 {
     text-align: center;
    font-size: 4vh;
 }
+ul{
+    list-style: none;
+    margin: 0;
+}
 li {
-    color: blue;
+    color: black;
     font-size: 3vh;
 }
 button{
@@ -12,9 +22,13 @@ button{
     font-size: 4vh;
     margin: -20px -11vh;
     position:relative;
-    top:50%;
+    top:10%;
     left:50%;
 }
 #id{
     color: black;
+}
+#qr{
+    width: 12vh;
+    height: 12vh;
 }
