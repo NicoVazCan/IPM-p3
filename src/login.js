@@ -21,7 +21,7 @@ document.querySelector('button#login')
             .then(response => response.json())
             .then(response => {
                 if (response['users'].length) {
-                    var user = response['users'][0];
+                    const user = response['users'][0];
 
                     window.location.href = './perfil?' +
                         'username=' + username + '&' +

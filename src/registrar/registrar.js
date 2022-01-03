@@ -18,16 +18,21 @@ var phone;
 var siVacun;
 var uuid;
 
-document.querySelector('form#register').addEventListener('submit', (event) => {
+document.querySelector('button#register').addEventListener('submit', (event) => {
 
     name = document.querySelector('input#name').value;
     surname = document.querySelector('input#surname').value;
     username = document.querySelector('input#username').value;
     password = document.querySelector('input#password').value;
-    var pwdcheck = document.querySelector('input#pwdcheck').value;
     email = document.querySelector('input#email').value;
     phone = document.querySelector('input#phone').value;
     siVacun = document.querySelector('input#sivacun').checked;
+
+    if (password !== document.querySelector('input#pwdcheck').value) {
+        document.querySelector('p#error').innerHTML = 'La contraseña se a repetido incorrectamente'
+        event.preventDefault();
+        return;
+    }
 
     var data = {
         "username": username,
@@ -49,22 +54,18 @@ document.querySelector('form#register').addEventListener('submit', (event) => {
     })
         .then(response => response.json())
         .then(response => {
-           document.querySelector('p#result').innerHTML = response['access_token'];
+            uuid = response['insert_users_one']['uuid'];
+
+            location.href = '../perfil' +
+                'username=' + username + '&' +
+                'name=' + name + '&' +
+                'surname=' + surname + '&' +
+                'email=' + email + '&' +
+                'phone=' + phone + '&' +
+                'vacun=' + siVacun + '&' +
+                'uuid=' + uuid;
         })
         .catch(error => document.querySelector('p#result').innerHTML = error.message);
 
     event.preventDefault();
 });
-
-document.querySelector('button#registrar')
-    .addEventListener('click', (event) => {
-        location.href = '../perfil' +
-            'username=' + username + '&' +
-            'name=' + name + '&' +
-            'surname=' + surname + '&' +
-            'email=' + email + '&' +
-            'phone=' + phone + '&' +
-            'vacun=' + siVacun + '&' +
-            'uuid=' + uuid;
-        event.preventDefault();
-    });
