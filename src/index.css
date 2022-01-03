@@ -1,0 +1,37 @@
+h1 {
+    text-align: center;
+    font-size: 4vh;
+}
+li {
+    color: blue;
+    font-size: 3vh;
+}
+button{
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-size: 4vh;
+    margin: -20px -10vh;
+    position:relative;
+    top:50%;
+    left:50%;
+}
+#login{
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-size: 4vh;
+    margin: -20px -13vh;
+    position:relative;
+    top:50%;
+    left:50%;
+}
+#id{
+    color: black;
+}
+ul{
+    text-align: center;
+}
+#inicio{
+    margin: 10vw;
+    alignment: center;
+    border: solid green;
+}

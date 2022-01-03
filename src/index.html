@@ -3,25 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+        <link href="index.css" rel="stylesheet">
         <title>Práctica 3</title>
     </head>
     <body>
         <h1 style="text-align: center">Bienvenido</h1>
         <button id="registrar">Registrar</button>
-        <ul>
-            <li>
-                <label for="surname">Nombre:</label>
-                <input type="text" id="surname" name="name">
-            </li>
-            <li>
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password">
-            </li>
-            <li>
-                <button id="login">Iniciar sesión</button>
-            </li>
-        </ul>
+        <p></p>
+        <div id="inicio">
+            <ul>
+                <li>
+                    <label for="surname">Nombre:<br></label>
+                    <input type="text" id="surname" name="name">
+                </li>
+                <li>
+                    <label for="password">Contraseña:<br></label>
+                    <input type="password" id="password" name="password">
+                </li>
+
+            </ul>
+            <p><br></p>
+            <button id="login">Iniciar sesión</button>
+            <p></p>
+
+        </div>
 
         <script src="login.js"> </script>
     </body>
