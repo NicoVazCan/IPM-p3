@@ -5,7 +5,7 @@ document.querySelector('button#registrar')
 });
 
 document.querySelector('button#login')
-    .addEventListener('click', (event) => {
+    .addEventListener('click', () => {
         const username = document.querySelector('input#username').value;
         const password = document.querySelector('input#password').value;
 
@@ -36,6 +36,4 @@ document.querySelector('button#login')
                 }
             })
             .catch(error => console.error(error));
-
-        event.preventDefault();
     });

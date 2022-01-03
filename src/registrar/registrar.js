@@ -1,12 +1,10 @@
 
-document.querySelector('input#sivacun').addEventListener('click', (event) => {
+document.querySelector('input#sivacun').addEventListener('click', () => {
     document.querySelector('input#novacun').checked = false;
-    event.preventDefault();
 });
 
-document.querySelector('input#novacun').addEventListener('click', (event) => {
+document.querySelector('input#novacun').addEventListener('click', () => {
     document.querySelector('input#sivacun').checked = false;
-    event.preventDefault();
 });
 
 var name;
@@ -18,7 +16,7 @@ var phone;
 var siVacun;
 var uuid;
 
-document.querySelector('button#register').addEventListener('submit', (event) => {
+document.querySelector('button#register').addEventListener('click', () => {
 
     name = document.querySelector('input#name').value;
     surname = document.querySelector('input#surname').value;
@@ -27,10 +25,14 @@ document.querySelector('button#register').addEventListener('submit', (event) => 
     email = document.querySelector('input#email').value;
     phone = document.querySelector('input#phone').value;
     siVacun = document.querySelector('input#sivacun').checked;
-
+    if (name === '' || surname === '' || username === '' ||
+        password === '' || email === '' || phone === '' ||
+        (!siVacun && !document.querySelector('input#sivacun').checked)) {
+        document.querySelector('p#error').innerHTML = 'Faltan entradas por rellenadas'
+        return;
+    }
     if (password !== document.querySelector('input#pwdcheck').value) {
         document.querySelector('p#error').innerHTML = 'La contraseña se a repetido incorrectamente'
-        event.preventDefault();
         return;
     }
 
@@ -56,7 +58,7 @@ document.querySelector('button#register').addEventListener('submit', (event) => 
         .then(response => {
             uuid = response['insert_users_one']['uuid'];
 
-            location.href = '../perfil' +
+            location.href = '../perfil?' +
                 'username=' + username + '&' +
                 'name=' + name + '&' +
                 'surname=' + surname + '&' +
@@ -65,7 +67,5 @@ document.querySelector('button#register').addEventListener('submit', (event) => 
                 'vacun=' + siVacun + '&' +
                 'uuid=' + uuid;
         })
-        .catch(error => document.querySelector('p#result').innerHTML = error.message);
-
-    event.preventDefault();
+        .catch(() => location.href = '../error');
 });
