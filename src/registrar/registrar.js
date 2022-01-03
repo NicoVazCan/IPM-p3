@@ -63,8 +63,8 @@ document.querySelector('button#register').addEventListener('click', () => {
         document.querySelector('p#error').innerHTML = "Solo puede haber un @";
         return;
     }
-    if(!phone.match(/^\d{9}$/)) {
-        document.querySelector('p#error').innerHTML = "Teléfono incorrecto";
+    if(!phone.match(/^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{e})$/)) {
+        document.querySelector('p#error').innerHTML = "Teléfono incorrecto (formato XXX-XXX-XXX)";
         return;
     }
 
