@@ -1,11 +1,11 @@
 document.querySelector('button#registrar')
     .addEventListener('click', () => {
-    location.replace('./registrar?name=pepe&');
+        window.location.href = './registrar';
 });
 
 document.querySelector('button#login')
     .addEventListener('click', () => {
-        const username = document.querySelector('input#surname').value;
+        const username = document.querySelector('input#username').value;
         const password = document.querySelector('input#password').value;
 
         fetch('http://localhost:8080/api/rest/login?' +
@@ -19,16 +19,19 @@ document.querySelector('button#login')
         })
             .then(response => response.json())
             .then(response => {
-                if (response['users'] !== []) {
+                if (response['users'].length) {
                     var user = response['users'][0];
 
-                    location.replace('./perfil?' +
+                    window.location.href = './perfil?' +
+                        'username=' + username + '&' +
                         'name=' + user['name'] + '&' +
                         'surname=' + user['surname'] + '&' +
                         'email=' + user['email'] + '&' +
-                        'phone=' + user['is_vaccinated'] + '&' +
-                        'uuid=' +user['uuid']
-                    );
+                        'phone=' + user['phone'] + '&' +
+                        'vacun=' + user['is_vaccinated'] + '&' +
+                        'uuid=' + user['uuid'];
+                } else {
+                    document.querySelector('p#error').innerHTML = 'Apodo o contraseña incorrecto'
                 }
             })
             .catch(error => console.error(error));
