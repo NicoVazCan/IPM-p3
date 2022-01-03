@@ -33,3 +33,7 @@ div{
     text-align: center;
     align-content: center;
 }
+#error{
+    font-size: 3vh;
+    color: red;
+}
