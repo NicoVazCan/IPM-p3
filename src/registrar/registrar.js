@@ -10,14 +10,14 @@ document.querySelector('input#novacun').addEventListener('click', () => {
 
 document.querySelector('form#register').addEventListener('submit', (event) => {
 
-    //var name = document.querySelector('input#name').value;
-    //var surname = document.querySelector('input#surname').value;
+    var name = document.querySelector('input#name').value;
+    var surname = document.querySelector('input#surname').value;
     var username = document.querySelector('input#username').value;
     var password = document.querySelector('input#password').value;
-    /*var pwdcheck = document.querySelector('input#pwdcheck').value;
+    var pwdcheck = document.querySelector('input#pwdcheck').value;
     var email = document.querySelector('input#email').value;
     var phone = document.querySelector('input#phone').value;
-    var siVacun = document.querySelector('input#sivacun').checked;*/
+    var siVacun = document.querySelector('input#sivacun').checked;
 
     var data = {
         "username": username,
