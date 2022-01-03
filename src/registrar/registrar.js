@@ -25,14 +25,46 @@ document.querySelector('button#register').addEventListener('click', () => {
     email = document.querySelector('input#email').value;
     phone = document.querySelector('input#phone').value;
     siVacun = document.querySelector('input#sivacun').checked;
+    var email_length = email.length;
+    var postion_of_at = email.indexOf('@');
+    var prequency_of_at = (email.split("@").length) - 1;
+
     if (name === '' || surname === '' || username === '' ||
         password === '' || email === '' || phone === '' ||
         (!siVacun && !document.querySelector('input#sivacun').checked)) {
-        document.querySelector('p#error').innerHTML = 'Faltan entradas por rellenar'
+        document.querySelector('p#error').innerHTML = 'Faltan entradas por rellenar';
         return;
     }
     if (password !== document.querySelector('input#pwdcheck').value) {
-        document.querySelector('p#error').innerHTML = 'La contraseña se a repetido incorrectamente'
+        document.querySelector('p#error').innerHTML = 'La contraseña se a repetido incorrectamente';
+        return;
+    }
+    if(email < 6){
+        document.querySelector('p#error').innerHTML = "Email demasiado corto";
+        return;
+    }
+    if(email.length > 254){
+        document.querySelector('p#error').innerHTML = "Email demasiado largo";
+        return;
+    }
+    if(postion_of_at < 0){
+        document.querySelector('p#error').innerHTML = "Falta el @ del email";
+        return;
+    }
+    if(postion_of_at === 0){
+        document.querySelector('p#error').innerHTML = "Esta el @ pero en primera posición";
+        return;
+    }
+    if((email_length-1) === postion_of_at){
+        document.querySelector('p#error').innerHTML = "Esta el @ pero en última posición";
+        return;
+    }
+    if(prequency_of_at > 1){
+        document.querySelector('p#error').innerHTML = "Solo puede haber un @";
+        return;
+    }
+    if(!phone.match(/^\d{9}$/)) {
+        document.querySelector('p#error').innerHTML = "Teléfono incorrecto";
         return;
     }
 
