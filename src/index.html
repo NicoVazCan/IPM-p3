@@ -8,25 +8,20 @@
         <title>Práctica 3</title>
     </head>
     <body>
-        <h1 style="text-align: center">Bienvenido</h1>
+        <div class="registrar">
+        <h1>Bienvenido</h1>
         <button id="registrar">Registrar</button>
-        <p></p>
-        <div id="inicio">
-            <ul>
-                <li>
-                    <label for="surname">Nombre:<br></label>
-                    <input type="text" id="surname" name="name">
-                </li>
-                <li>
-                    <label for="password">Contraseña:<br></label>
-                    <input type="password" id="password" name="password">
-                </li>
+        </div>
+        <div class="inicio">
 
-            </ul>
-            <p><br></p>
+            <p><label for="surname">Nombre:</label></p>
+            <p><input type="text" id="surname" name="name"></p>
+
+            <p> <label for="password">Contraseña:</label></p>
+            <p> <input type="password" id="password" name="password"></p>
+
             <button id="login">Iniciar sesión</button>
             <p></p>
-
         </div>
 
         <script src="login.js"> </script>
