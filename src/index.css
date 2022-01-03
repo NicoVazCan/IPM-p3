@@ -1,0 +1,45 @@
+body{
+    font-family: "Muli", sans-serif;
+    background-color: #1aa4ce;
+}
+h1 {
+    text-align: center;
+    font-size: 5vh;
+    font-style: inherit;
+}
+
+p {
+    color: blue;
+    font-size: 3vh;
+}
+button{
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-size: 4vh;
+
+}
+#login{
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-size: 4vh;
+}
+#id{
+    color: black;
+}
+ul{
+    text-align: center;
+}
+.registrar{
+    text-align: center
+}
+input{
+    height: 2.5vh;
+    width: 50vw;
+}
+.inicio{
+    margin: 20px;
+    background-color: #dfefff;
+    border: solid green;
+    align-content: center;
+    text-align: center;
+}
