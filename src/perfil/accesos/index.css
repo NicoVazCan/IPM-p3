@@ -15,12 +15,23 @@ input{
     background-color: #bbf0f0;
 }
 
-.tabla{
+.tabla {
     margin-left: auto;
     margin-right: auto;
+    overflow-y: auto;
+    height: 40vh;
 }
+.tabla thead th {
+    position: sticky;
+    top: 0;
+}
+table {
+    width: 100%;
+}
+
 th{
     font-size: 30px;
+    width: min-content;
 }
 
 table, th, td {

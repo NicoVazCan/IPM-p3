@@ -63,7 +63,7 @@ document.querySelector('button#register').addEventListener('click', () => {
         document.querySelector('p#error').innerHTML = "Solo puede haber un @";
         return;
     }
-    if(!phone.match(/^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{e})$/)) {
+    if(!phone.match(/^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{3})$/)) {
         document.querySelector('p#error').innerHTML = "Teléfono incorrecto (formato XXX-XXX-XXX)";
         return;
     }
@@ -78,7 +78,8 @@ document.querySelector('button#register').addEventListener('click', () => {
         "is_vaccinated": siVacun
     };
 
-    fetch('http://localhost:8080/api/rest/user', {
+    fetch('http://' + window.location.hostname
+        + ':8080/api/rest/user', {
         method: 'POST',
         headers: {
             'x-hasura-admin-secret': 'myadminsecretkey',

@@ -13,7 +13,8 @@ document.querySelector('button#login')
             return;
         }
 
-        fetch('http://localhost:8080/api/rest/login?' +
+        fetch('http://' + window.location.hostname
+            + ':8080/api/rest/login?' +
             'username=' + username + '&' +
             'password=' + password,
             {
