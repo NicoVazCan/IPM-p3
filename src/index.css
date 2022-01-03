@@ -1,8 +1,9 @@
 body{
-    font-family: "Muli", sans-serif;
+    font-family: Garamond, serif;
     background-color: #1aa4ce;
 }
 h1 {
+    color:white;
     text-align: center;
     font-size: 5vh;
     font-style: inherit;
