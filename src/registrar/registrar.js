@@ -1,23 +1,38 @@
 
-document.querySelector('input#sivacun').addEventListener('click', () => {
+document.querySelector('input#sivacun').addEventListener('click', (event) => {
     document.querySelector('input#novacun').checked = false;
+    event.preventDefault();
 });
 
-document.querySelector('input#novacun').addEventListener('click', () => {
+document.querySelector('input#novacun').addEventListener('click', (event) => {
     document.querySelector('input#sivacun').checked = false;
+    event.preventDefault();
 });
 
+var name;
+var surname;
+var username;
+var password;
+var email;
+var phone;
+var siVacun;
+var uuid;
 
-document.querySelector('form#register').addEventListener('submit', (event) => {
+document.querySelector('button#register').addEventListener('submit', (event) => {
 
-    var name = document.querySelector('input#name').value;
-    var surname = document.querySelector('input#surname').value;
-    var username = document.querySelector('input#username').value;
-    var password = document.querySelector('input#password').value;
-    var pwdcheck = document.querySelector('input#pwdcheck').value;
-    var email = document.querySelector('input#email').value;
-    var phone = document.querySelector('input#phone').value;
-    var siVacun = document.querySelector('input#sivacun').checked;
+    name = document.querySelector('input#name').value;
+    surname = document.querySelector('input#surname').value;
+    username = document.querySelector('input#username').value;
+    password = document.querySelector('input#password').value;
+    email = document.querySelector('input#email').value;
+    phone = document.querySelector('input#phone').value;
+    siVacun = document.querySelector('input#sivacun').checked;
+
+    if (password !== document.querySelector('input#pwdcheck').value) {
+        document.querySelector('p#error').innerHTML = 'La contraseña se a repetido incorrectamente'
+        event.preventDefault();
+        return;
+    }
 
     var data = {
         "username": username,
@@ -36,20 +51,21 @@ document.querySelector('form#register').addEventListener('submit', (event) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    }).then(response => {
-        document.querySelector('p#result').innerHTML = response['access_token'];
-    }).catch(error => document.querySelector('p#result').innerHTML = error.message);
+    })
+        .then(response => response.json())
+        .then(response => {
+            uuid = response['insert_users_one']['uuid'];
+
+            location.href = '../perfil' +
+                'username=' + username + '&' +
+                'name=' + name + '&' +
+                'surname=' + surname + '&' +
+                'email=' + email + '&' +
+                'phone=' + phone + '&' +
+                'vacun=' + siVacun + '&' +
+                'uuid=' + uuid;
+        })
+        .catch(error => document.querySelector('p#result').innerHTML = error.message);
 
     event.preventDefault();
 });
-
-
-
-
-
-
-
-
-
-
-

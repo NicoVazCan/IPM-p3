@@ -1,10 +1,11 @@
 document.querySelector('button#registrar')
-    .addEventListener('click', () => {
+    .addEventListener('click', (event) => {
         window.location.href = './registrar';
+        event.preventDefault();
 });
 
 document.querySelector('button#login')
-    .addEventListener('click', () => {
+    .addEventListener('click', (event) => {
         const username = document.querySelector('input#username').value;
         const password = document.querySelector('input#password').value;
 
@@ -20,7 +21,7 @@ document.querySelector('button#login')
             .then(response => response.json())
             .then(response => {
                 if (response['users'].length) {
-                    var user = response['users'][0];
+                    const user = response['users'][0];
 
                     window.location.href = './perfil?' +
                         'username=' + username + '&' +
@@ -35,4 +36,6 @@ document.querySelector('button#login')
                 }
             })
             .catch(error => console.error(error));
+
+        event.preventDefault();
     });
