@@ -12,6 +12,7 @@ document.querySelector('img#qr').src = 'https://api.qrserver.com/v1/create-qr-co
     '&amp;size=100x100';
 
 document.querySelector('button#accesos')
-    .addEventListener('click', () => {
+    .addEventListener('click', (event) => {
         window.location.href = './accesos';
+        event.preventDefault();
     });
