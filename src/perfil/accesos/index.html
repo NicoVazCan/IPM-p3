@@ -3,25 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="./index.css" rel="stylesheet">
 </head>
 <body>
+    <h1>Accesos</h1>
+    <ul>
+        <li>
+            <label for="Desde">Desde<br><input type="date" name="Desde" id="desde"></label>
+        </li>
+        <li>
+            <label for="Hasta">Hasta<br><input type="date" name="Hasta" id="hasta"></label>
+        </li>
+    </ul>
+    
     <main>
-        <table id="accesos">
-            <tr>
-                <th>
-                    Centro
-                </th>
-                <th>
-                    Fecha
-                </th>
-                <th>
-                    Hora
-                </th>
-                <th>
-                    Tipo
-                </th>
-            </tr>
-        </table>
+        <div style="overflow-x:auto;">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>
+                            Centro <br>
+                        </th>
+                        <th>
+                            Fecha <br>
+                        </th>
+                        <th>
+                            Hora <br>
+                        </th>
+                        <th>
+                            Tipo <br>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="accesos">
+
+                </tbody>
+            </table>
+        </div>
     </main>
 </body>
 </html>
