@@ -1,0 +1,39 @@
+body{
+    font-family: "Muli", sans-serif;
+    background-color: #d8e8ff;
+}
+h1 {
+    text-align: center;
+    font-size: 5vh;
+    font-style: inherit;
+}
+
+li {
+    color: green;
+    font-size: 3vh;
+}
+button{
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-size: 4vh;
+
+}
+#id{
+    color: black;
+}
+.radio{
+    width: 3vh;
+    height: 3vh;
+}
+ul{
+    list-style: none;
+    margin-left: -4vh;
+}
+div{
+    text-align: center;
+    align-content: center;
+}
+#error{
+    font-size: 3vh;
+    color: red;
+}
