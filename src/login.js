@@ -1,13 +1,17 @@
 document.querySelector('button#registrar')
-    .addEventListener('click', (event) => {
+    .addEventListener('click', () => {
         window.location.href = './registrar';
-        event.preventDefault();
 });
 
 document.querySelector('button#login')
     .addEventListener('click', () => {
         const username = document.querySelector('input#username').value;
         const password = document.querySelector('input#password').value;
+
+        if (username === '' || password === '') {
+            document.querySelector('p#error').innerHTML = 'Faltan entradas por rellenar';
+            return;
+        }
 
         fetch('http://localhost:8080/api/rest/login?' +
             'username=' + username + '&' +
@@ -32,8 +36,8 @@ document.querySelector('button#login')
                         'vacun=' + user['is_vaccinated'] + '&' +
                         'uuid=' + user['uuid'];
                 } else {
-                    document.querySelector('p#error').innerHTML = 'Apodo o contraseña incorrecto'
+                    document.querySelector('p#error').innerHTML = 'Apodo o contraseña incorrecto';
                 }
             })
-            .catch(error => console.error(error));
+            .catch(() => location.href = './error');
     });

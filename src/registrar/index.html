@@ -12,31 +12,31 @@
             <ul>
                 <li>
                     <label for="name">Nombre:<br></label>
-                    <input type="text" id="name" name="name">
+                    <input required type="text" id="name" name="name">
                 </li>
                 <li>
                     <label for="surname">Apellidos:<br></label>
-                    <input type="text" id="surname" name="surname">
+                    <input required type="text" id="surname" name="surname">
                 </li>
                 <li>
                     <label for="username">Apodo:<br></label>
-                    <input type="text" id="username" name="user_name">
+                    <input required type="text" id="username" name="user_name">
                 </li>
                 <li>
                     <label for="password">Contraseña:<br></label>
-                    <input type="password" id="password" name="password">
+                    <input required type="password" id="password" name="password">
                 </li>
                 <li>
                     <label for="pwdcheck">Vuelva a introducir la contraseña:<br></label>
-                    <input type="password" id="pwdcheck" name="pwd_check">
+                    <input required type="password" id="pwdcheck" name="pwd_check">
                 </li>
                 <li>
                     <label for="email">Email:<br></label>
-                    <input type="email" id="email" name="email">
+                    <input required type="email" id="email" name="email " pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$">
                 </li>
                 <li>
                     <label for="phone">Teléfono:<br></label>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                    <input required type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
                 </li>
                 <li>
                     <label>Vacunado:</label>
