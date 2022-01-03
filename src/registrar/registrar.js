@@ -28,7 +28,7 @@ document.querySelector('button#register').addEventListener('click', () => {
     if (name === '' || surname === '' || username === '' ||
         password === '' || email === '' || phone === '' ||
         (!siVacun && !document.querySelector('input#sivacun').checked)) {
-        document.querySelector('p#error').innerHTML = 'Faltan entradas por rellenadas'
+        document.querySelector('p#error').innerHTML = 'Faltan entradas por rellenar'
         return;
     }
     if (password !== document.querySelector('input#pwdcheck').value) {
