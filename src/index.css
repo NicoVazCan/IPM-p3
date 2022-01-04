@@ -11,10 +11,6 @@ h1 {
     font-style: inherit;
 }
 
-p {
-    color: blue;
-    font-size: 3vh;
-}
 button{
     background-color: #4CAF50; /* Green */
     color: white;
