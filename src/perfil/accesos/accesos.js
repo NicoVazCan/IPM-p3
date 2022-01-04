@@ -16,8 +16,8 @@ function filtrarAccesos(idCentro) {
 }
 
 function setTableWithAccesos(idCentro) {
-    while (tbodyRef.childNodes.length) {
-        tbodyRef.removeChild(tbodyRef.childNodes[0]);
+    while ((tr = tbodyRef.querySelector('tr')) !== null) {
+        tr.remove();
     }
 
     for (const acceso of filtrarAccesos(idCentro)) {
@@ -62,8 +62,6 @@ fetch('http://' + window.location.hostname
                     var opt = document.createElement('option');
                     opt.value = centro['id'];
                     opt.innerHTML = centro['name'];
-                    opt.addEventListener('click', (event) =>
-                        setTableWithAccesos(event.target.value));
                     select.appendChild(opt);
                 }
                 setTableWithAccesos(select.value);
@@ -71,3 +69,8 @@ fetch('http://' + window.location.hostname
             .catch(() => location.href = '../../error');
     })
     .catch(() => location.href = '../../error');
+
+
+select.addEventListener('change', function() {
+    setTableWithAccesos(this.value);
+}, false);
