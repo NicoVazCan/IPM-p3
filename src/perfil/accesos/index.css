@@ -46,7 +46,7 @@ th{
     font-size: 3vh;
 }
 table, th, td {
-    border: 2px solid rgb(0, 64, 167);
+    border-style: ridge;
     border-collapse: collapse;
 }
 
@@ -58,4 +58,9 @@ ul{
     margin-left: -30px;
     list-style: none;
     text-align: center;
+}
+mark{
+    border-style: ridge;
+    background-color: #bbf0f0;
+    color: black;
 }
