@@ -17,7 +17,7 @@ function filtrarAccesos(idCentro) {
 
 function setTableWithAccesos(idCentro) {
     while (tbodyRef.childNodes.length) {
-        tbodyRef.childNodes[0].remove();
+        tbodyRef.removeChild(tbodyRef.childNodes[0]);
     }
 
     for (const acceso of filtrarAccesos(idCentro)) {
