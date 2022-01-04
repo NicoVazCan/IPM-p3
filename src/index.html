@@ -10,18 +10,18 @@
     <body>
         <div class="registrar">
         <h1>Bienvenido</h1>
-        <button id="registrar">Registrar</button>
+        <button id="registrar" aria-label="Registrar">Registrar</button>
         </div>
         <div class="inicio">
 
             <p><label for="username">Usuario:</label></p>
-            <p><input required type="text" id="username" name="username"></p>
+            <p><input aria-describedby="error" required type="text" id="username" name="username"></p>
 
             <p><label for="password">Contraseña:</label></p>
-            <p><input required type="password" id="password" name="password"></p>
+            <p><input aria-describedby="error" required type="password" id="password" name="password"></p>
 
-            <button id="login">Iniciar sesión</button>
-            <p id="error"></p>
+            <button id="login"  aria-label="Iniciar sesión">Iniciar sesión</button>
+            <p id="error" ></p>
         </div>
 
         <script src="login.js"> </script>
