@@ -9,7 +9,7 @@
     <h1>Accesos</h1>
 
     <label for="centros">Escoja el centro:<br></label>
-    <select tabindex="0" name="centros" id="centros"></select>
+    <select tabindex="0" name="centros" id="centros" aria-keyshortcuts="true" aria-controls="accesos"></select>
 
     <main>
         <div class="tabla">
@@ -30,7 +30,7 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody id="accesos">
+                <tbody id="accesos" aria-readonly="true" aria-live="polite">
                 </tbody>
             </table>
         </div>
